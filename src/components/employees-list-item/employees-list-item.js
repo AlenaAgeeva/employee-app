@@ -6,6 +6,7 @@ class EmployeesListItem extends Component {
     super(props);
     this.state = {
       increase: false,
+      like: false,
     };
   }
   onIncrease = () => {
@@ -14,15 +15,21 @@ class EmployeesListItem extends Component {
     }));
   };
   addLike = () => {
-    console.log("k");
+    this.setState(({ like }) => ({
+      like: !like,
+    }));
   };
 
   render() {
     const { name, salary } = this.props;
-    const { increase } = this.state;
-    let clName = `list-group-item d-flex justify-content-between like ${
-      increase === true ? "increase" : ""
-    } `;
+    const { increase, like } = this.state;
+    let clName = "list-group-item d-flex justify-content-between";
+    if (increase) {
+      clName += " increase";
+    }
+    if (like) {
+      clName += " like";
+    }
     return (
       <li className={clName}>
         <span className="list-group-item-label" onClick={this.addLike}>
