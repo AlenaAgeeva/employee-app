@@ -31,7 +31,7 @@ class EmployeesAddForm extends Component {
           <input
             type="text"
             className="form-control new-post-label"
-            placeholder="Как его зовут?"
+            placeholder="What is her/his name?"
             name="name"
             value={name}
             onChange={this.onValueChange}
@@ -39,7 +39,7 @@ class EmployeesAddForm extends Component {
           <input
             type="number"
             className="form-control new-post-label"
-            placeholder="З/П в $?"
+            placeholder="Salary range in $?"
             name="salary"
             value={salary}
             onChange={this.onValueChange}
